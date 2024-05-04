@@ -1,0 +1,174 @@
+@import "./variable";
+@import "./reset";
+@import "./mixin";
+
+.hold {
+    width: 90%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.hero {
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+
+    &Logo {
+        margin: 1rem 0;
+    }
+
+    &Txt {
+        text-align: center;
+        transition: all 0.2s ease;
+
+        h1 {
+            margin: 1rem 0;
+            font-size: 3rem;
+            font-weight: 400;
+            color: $gray;
+
+            strong {
+                color: $veryDarkBlue;
+            }
+        }
+
+        p {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: rgba($veryDarkBlue, 0.75);
+        }
+
+        @include medium() {
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        @include mobile() {
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    &Form {
+        flex-grow: 1;
+        margin: 2rem 0;
+        text-align: left;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        transition: all 0.2s ease;
+
+        @include medium() {
+            flex-direction: column;
+        }
+    }
+
+    &Field {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.2s ease;
+
+        input {
+            height: 3rem;
+            padding: 0 1.5rem;
+            font-size: 1rem;
+            border: 1px solid $gray;
+            outline: none;
+            border-radius: 3rem;
+        }
+
+        p {
+            display: none;
+            opacity: 0;
+            margin: 0.25rem 1.5rem;
+            font-size: 0.8rem;
+            font-style: italic;
+            color: $lightRed;
+            transition: all 0.2s ease;
+        }
+
+        &Error {
+            input {
+                border-color: $lightRed;
+            }
+
+            p {
+                display: block;
+                opacity: 1;
+            }
+        }
+    }
+
+    &Submit {
+        flex: none;
+        height: 3rem;
+        margin-left: 1rem;
+        padding: 0 2.5em;
+        font-size: 1rem;
+        font-weight: 500;
+        background-color: $blue;
+        color: #fff;
+        border: 1px solid $blue;
+        border-radius: 3rem;
+
+        @include medium {
+            width: 100%;
+            margin: 0;
+            margin-top: 1rem;
+        }
+    }
+
+    &Img {
+        margin: 2rem 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    &Foot {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: $gray;
+        }
+    }
+
+    &Links {
+        display: flex;
+
+        a {
+            margin: 0 0.25em;
+            width: 2rem;
+            height: 2rem;
+            font-weight: 500;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $blue;
+            border: 1px solid rgba($gray, 0.5);
+            border-radius: 3rem;
+
+            &:hover {
+                background-color: $blue;
+                color: #fff;
+            }
+        }
+    }
+}
